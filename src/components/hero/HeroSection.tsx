@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import FabricSimulation from "./FabricSimulation";
 
@@ -10,7 +11,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   title = "6699 & TALZ",
-  subtitle = "Luxury Redefined",
+  subtitle = "L'Élégance Africaine Réinventée",
   videoUrl = "https://player.vimeo.com/external/459389137.hd.mp4?s=865d2c0c1c44df559e4005487b3c48a64b95efe4&profile_id=175&oauth2_token_id=57447761",
 }: HeroSectionProps) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -81,14 +82,16 @@ const HeroSection = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
           >
-            <motion.button
-              className="px-8 py-4 text-lg border border-white/30 backdrop-blur-sm
-                         hover:bg-white/10 transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Collection
-            </motion.button>
+            <Link to="/collections">
+              <motion.button
+                className="px-8 py-4 text-lg border border-white/30 backdrop-blur-sm
+                           hover:bg-white/10 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Découvrir la Collection
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
